@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>first-app</title>
+  </head>
+  <body>
+    <div id="app"  @mouseover="getLocation">
+      <h2  v-once>{{ displayTitle() }}</h2>
+      Enter your name: <input type="text" v-model="name">
+      <p>{{ displayLink() }} <a v-bind:href="link">Google</a></p>
+      <br>
+      <div>
+      Type then press enter to 'submit'! <input type="text" v-on:keyup.enter="submit" v-model="message">
+      </div>
+      <hr>
+      <br>      
+
+      <div>
+        <p>
+          Your cursor coordinates are: {{ X }} / {{ Y }}
+          <br> <span @mouseover.stop=""><strong>HOVER HERE AND WATCH IT STOP </strong></span>
+          <br> <span>DIVIDED BY 2: {{ halfCoords }}</span>
+        </p>
+      </div>
+      <hr><br>
+
+      <div>
+          <button @click="clickEvent">Click Me!</button>
+          <p>{{ counter }}</p> <br>
+          <button @click="step(2)">Click me for + 2!</button>
+        </div>
+        <hr>
+        <br>
+    </div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>
