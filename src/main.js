@@ -43,7 +43,7 @@ new Vue({
     },
     clickEvent: function(){
       this.counter++;
-      if(this.counter === 10)
+      if(this.counter >= 10)
       this.counter = 0;
     },
     step: function(step){
